@@ -27,8 +27,7 @@ const safetyReportSchema = new mongoose.Schema({
   },
   reportType: {
     type: String,
-    enum: ['lighting', 'crowding', 'incident', 'general', 'positive'],
-    default: 'general'
+    default: 'general' // ✅ Allow any text, no enum restriction
   },
   comment: {
     type: String,
@@ -36,8 +35,7 @@ const safetyReportSchema = new mongoose.Schema({
   },
   timeOfDay: {
     type: String,
-    enum: ['morning', 'afternoon', 'evening', 'night'],
-    required: true
+    required: true // ✅ No enum restriction now
   },
   verified: {
     type: Boolean,
